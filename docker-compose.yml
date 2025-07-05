@@ -1,0 +1,33 @@
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: my_velog_backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+      - ./requirements.txt:/app/requirements.txt
+    environment:
+      - PYTHONUNBUFFERED=1
+    env_file:
+      - .env
+    depends_on:
+      - ai_service
+
+  ai_service:
+    build:
+      context: ./ai_service
+      dockerfile: Dockerfile
+    container_name: my_velog_ai_service
+    ports:
+      - "9000:9000"
+    volumes:
+      - ./ai_service:/app
+      - ./requirements.txt:/app/requirements.txt
+    environment:
+      - PYTHONUNBUFFERED=1 
+    env_file:
+      - .env
