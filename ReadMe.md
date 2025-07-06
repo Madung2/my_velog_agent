@@ -32,19 +32,9 @@
 
 ---
 
-## 폴더 구조 예시
+## 폴더 구조
 
-```
-my_velog_agent/
-  ├── langchain_playground/
-  │   ├── summarize_chain.py      # 요약 체인 예제
-  │   ├── faiss_memory.py         # FAISS 연동 예제
-  │   └── run_example.py          # 전체 실행 예제
-  ├── backend/           # FastAPI 서버
-  ├── frontend/          # Streamlit 앱
-  ├── requirements.txt   # 필수 패키지 목록
-  └── ReadMe.md
-```
+
 
 ---
 
