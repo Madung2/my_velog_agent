@@ -38,7 +38,7 @@
 
 ---
 
-## gRPC 기반 AI 서비스 서버 아키텍처 예시
+## gRPC 기반 AI 서비스 서버
 
 ```mermaid
 graph TD
