@@ -1,5 +1,4 @@
-fastapi
-uvicorn
+
 langchain[openai]
 openai
 faiss-cpu
