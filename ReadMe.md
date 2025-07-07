@@ -52,3 +52,8 @@ graph TD
 
 ## 사용 기술 스택
 - Python, FastAPI, LangChain, FAISS, Streamlit, gRPC, OpenAI API, 각종 외부 API(Gmail, Slack, Notion 등)
+
+TODO-list
+[7/7] 
+- 랭체인 툴스 테스트
+- uv로 바꾸기

@@ -1,33 +1,31 @@
 
 services:
-  # backend:
-  #   image: velog_backend:latest
-  #   build:
-  #     context: ./backend
-  #     dockerfile: Dockerfile
-  #   container_name: my_velog_backend
-  #   ports:
-  #     - "8000:8000"
-  #   volumes:
-  #     - ./backend:/app
-  #   environment:
-  #     - PYTHONUNBUFFERED=1
-  #   env_file:
-  #     - .env
-  #   depends_on:
-  #     - ai_service
+  backend:
+    image: velog_backend:latest
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    container_name: my_velog_backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+      - ./pyproject.toml:/app/pyproject.toml
+    environment:
+      - PYTHONUNBUFFERED=1
+    depends_on:
+      - ai_service
 
   ai_service:
-    image: velog_ai_service:latest
+    image: velog_ai:latest
     build:
-      context: ./ai_service
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: ai_service/Dockerfile
     container_name: my_velog_ai_service
     ports:
       - "9000:9000"
     volumes:
       - ./ai_service:/app
+      - ./pyproject.toml:/app/pyproject.toml
     environment:
-      - PYTHONUNBUFFERED=1 
-    env_file:
-      - .env
+      - PYTHONUNBUFFERED=1

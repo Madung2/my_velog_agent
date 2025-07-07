@@ -1,8 +1,0 @@
-fastapi
-uvicorn
-grpcio
-grpcio-tools
-python-dotenv
-pydantic
-httpx
-

@@ -1,16 +1,25 @@
 # FastAPI + LangChain + FAISS 백엔드용 Dockerfile
-FROM python:3.12-slim
-
-# 작업 디렉토리 생성
+FROM ghcr.io/astral-sh/uv:python3.12-bookworm-slim
 WORKDIR /app
 
-# requirements.txt 복사 및 패키지 설치
-COPY requirements.txt ./
-RUN pip install --no-cache-dir --upgrade pip \
-    && pip install --no-cache-dir -r requirements.txt
+# pyproject.toml 복사
+COPY pyproject.toml ./
 
-# 소스 코드 복사
-COPY . .
+# 의존성만 설치 (패키지 빌드 없이)
+RUN uv pip install --system --no-cache \
+    fastapi \
+    uvicorn \
+    "langchain[openai]" \
+    openai \
+    faiss-cpu \
+    grpcio \
+    grpcio-tools \
+    python-dotenv \
+    pydantic \
+    httpx
+
+# backend 소스 코드 복사
+COPY backend/ ./
 
 # FastAPI 서버 실행 (예시: main.py)
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"] 
