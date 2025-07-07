@@ -10,6 +10,7 @@ from langchain.chat_models import init_chat_model
 # OpenAI API 키 체크
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
+# 호오오??! ->api를 돌릴 수 있는 애군?!!!?!?!?!?! g함수를 둘리고...신기해신기해
 @tool
 def calculate_sum(a: int, b: int) -> int:
     """두 숫자의 합을 계산합니다."""

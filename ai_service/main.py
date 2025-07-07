@@ -1,7 +1,7 @@
 import time
 import os
 from langchain_chain import summarize_text, store_and_search
-from ai_service.langchain_tool_test import test_tools, run_agent_with_query
+from langchain_tool_test import test_tools, run_agent_with_query
 
 def main():
     print("🚀 AI Service 시작됨!")

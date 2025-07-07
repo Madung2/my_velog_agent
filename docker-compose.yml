@@ -1,21 +1,21 @@
 
 services:
-  backend:
-    image: velog_backend:latest
-    build:
-      context: ./backend
-      dockerfile: Dockerfile
-    container_name: my_velog_backend
-    ports:
-      - "8000:8000"
-    volumes:
-      - ./backend:/app
-    environment:
-      - PYTHONUNBUFFERED=1
-    env_file:
-      - .env
-    depends_on:
-      - ai_service
+  # backend:
+  #   image: velog_backend:latest
+  #   build:
+  #     context: ./backend
+  #     dockerfile: Dockerfile
+  #   container_name: my_velog_backend
+  #   ports:
+  #     - "8000:8000"
+  #   volumes:
+  #     - ./backend:/app
+  #   environment:
+  #     - PYTHONUNBUFFERED=1
+  #   env_file:
+  #     - .env
+  #   depends_on:
+  #     - ai_service
 
   ai_service:
     image: velog_ai_service:latest
