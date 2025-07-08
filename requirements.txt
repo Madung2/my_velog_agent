@@ -1,0 +1,10 @@
+fastapi
+uvicorn[standard]
+langchain[openai]
+openai
+faiss-cpu
+grpcio
+grpcio-tools
+python-dotenv
+pydantic
+httpx 

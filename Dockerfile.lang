@@ -1,0 +1,19 @@
+# LangChain + FAISS gRPC AI 서비스용 Dockerfile
+FROM ghcr.io/astral-sh/uv:python3.12-bookworm-slim
+
+WORKDIR /app
+
+# requirements.txt 파일 복사
+COPY requirements.txt ./
+
+# 의존성 설치
+RUN uv pip install --system --no-cache -r requirements.txt
+
+# ai_service 소스 코드 복사
+COPY ai_service/ ./
+
+# 포트 노출
+EXPOSE 9000
+
+# gRPC 서버 실행
+CMD ["python", "main.py"]

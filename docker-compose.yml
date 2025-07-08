@@ -4,7 +4,7 @@ services:
     image: velog_backend:latest
     build:
       context: .
-      dockerfile: backend/Dockerfile
+      dockerfile: Dockerfile.back
     container_name: my_velog_backend
     ports:
       - "8000:8000"
@@ -20,7 +20,7 @@ services:
     image: velog_ai:latest
     build:
       context: .
-      dockerfile: ai_service/Dockerfile
+      dockerfile: Dockerfile.lang
     container_name: my_velog_ai_service
     ports:
       - "9000:9000"
